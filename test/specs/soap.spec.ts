@@ -30,6 +30,35 @@ const SUBTRACT_XML = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.or
 
 describe('CalculationService', () => {
 
+  describe('wsdl', () => {
+
+    const wsdlPath = SOAP_PATH + '?wsdl';
+
+    it('should result in http status ok', () =>
+
+      request(app)
+        .get(wsdlPath)
+        .expect(200)
+    );
+
+    it('should result with xml body', () =>
+
+      request(app)
+        .get(wsdlPath)
+        .then(data => {
+
+          expect(data).not.to.be.undefined;
+          expect(data.text).to.be.a('string');
+
+          parseString(data.text, (err, result) => {
+            expect(err).to.be.null;
+            expect(result).to.be.an('object');
+          });
+        })
+    );
+
+  });
+
   describe('Add', () => {
 
     it('should result in http status ok', () =>
