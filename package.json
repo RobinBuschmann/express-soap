@@ -1,6 +1,6 @@
 {
   "name": "express-soap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Express middleware based upon node-soap",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,15 @@
     "pretest": "npm run build",
     "test": "mocha 'test/specs/**/*.js'"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinBuschmann/express-soap.git"
+  },
+  "author": "Robin Buschmann <robinbuschmann@hotmail.de>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinBuschmann/express-soap/issues"
+  },
   "peerDependencies": {
     "express": "^3.20.0",
     "soap": "^0.16.0"
