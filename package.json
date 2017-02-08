@@ -1,0 +1,40 @@
+{
+  "name": "express-soap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "mocha 'test/specs/**/*.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "express": "^3.20.0",
+    "soap": "^0.16.0"
+  },
+  "devDependencies": {
+    "@types/chai": "3.4.34",
+    "@types/mocha": "2.2.39",
+    "@types/sinon": "1.16.34",
+    "@types/sinon-chai": "2.7.27",
+    "@types/supertest": "2.0.0",
+    "@types/xml2js": "0.0.32",
+    "chai": "3.5.0",
+    "express": "4.14.1",
+    "mocha": "3.2.0",
+    "sinon": "1.17.7",
+    "sinon-chai": "2.8.0",
+    "soap": "0.18.0",
+    "supertest": "3.0.0",
+    "tslint": "4.4.2",
+    "typescript": "2.1.5",
+    "xml2js": "0.4.17"
+  },
+  "dependencies": {
+    "@types/express": "4.0.35",
+    "@types/soap": "0.0.31",
+    "es6-shim": "0.35.3"
+  }
+}

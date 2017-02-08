@@ -1,0 +1,16 @@
+# mac
+*.DS_Store
+
+# ide
+.idea
+
+# libs
+node_modules
+
+# src
+**/*.d.ts
+**/*.js
+**/*.js.map
+
+# logs
+npm-debug.log
