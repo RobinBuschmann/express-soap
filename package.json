@@ -1,7 +1,7 @@
 {
   "name": "express-soap",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express middleware based upon node-soap",
   "main": "index.js",
   "scripts": {
     "build": "tsc && tsc --project test",
