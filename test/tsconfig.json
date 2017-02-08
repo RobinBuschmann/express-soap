@@ -8,19 +8,21 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "declaration": true,
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": true,
     "pretty": true,
     "lib": ["es6"]
   },
   "include": [
-    "lib/**/*"
+    "services/**/*",
+    "specs/**/*",
+    "wsdls/**/*"
   ],
   "files": [
-    "index.ts"
+    "app.ts"
   ],
   "exclude": [
-    "node_modules"
+    "../node_modules",
+    "../lib"
   ]
 }
