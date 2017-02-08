@@ -11,6 +11,8 @@ npm install express-soap --save
 ## Usage
 All node-soap options are valid and can be passed. See [node-soap](https://github.com/vpulim/node-soap#options-1) for documentation.
 ```javascript
+import {soap} from 'express-soap';
+
 const app = express();
 
 app.use('/soap/calculation', soap({
