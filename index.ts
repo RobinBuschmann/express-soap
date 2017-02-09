@@ -1,1 +1,1 @@
-export {soap} from './lib/express-soap';
+export {soap, createSoapServer} from './lib/express-soap';

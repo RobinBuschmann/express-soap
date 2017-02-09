@@ -50,9 +50,15 @@ describe('CalculationService', () => {
           expect(data).not.to.be.undefined;
           expect(data.text).to.be.a('string');
 
-          parseString(data.text, (err, result) => {
-            expect(err).to.be.null;
-            expect(result).to.be.an('object');
+          return new Promise(resolve => {
+
+            parseString(data.text, (err, result) => {
+
+              expect(err).to.be.null;
+              expect(result).to.be.an('object');
+
+              resolve();
+            });
           });
         })
     );
@@ -79,9 +85,15 @@ describe('CalculationService', () => {
           expect(data).not.to.be.undefined;
           expect(data.text).to.be.a('string');
 
-          parseString(data.text, (err, result) => {
-            expect(err).to.be.null;
-            expect(result).to.be.an('object');
+          return new Promise(resolve => {
+
+            parseString(data.text, (err, result) => {
+
+              expect(err).to.be.null;
+              expect(result).to.be.an('object');
+
+              resolve();
+            });
           });
         })
     );
@@ -93,9 +105,14 @@ describe('CalculationService', () => {
         .send(ADD_XML)
         .then(data => {
 
-          parseString(data.text, (err, result) => {
+          return new Promise(resolve => {
 
-            expect(result['soap:Envelope']['soap:Body'][0]['AddResponse'][0]['result'][0]).to.eql('5');
+            parseString(data.text, (err, result) => {
+
+              expect(result['soap:Envelope']['soap:Body'][0]['AddResponse'][0]['result'][0]).to.eql('5');
+
+              resolve();
+            });
           });
         })
     );
@@ -122,9 +139,15 @@ describe('CalculationService', () => {
           expect(data).not.to.be.undefined;
           expect(data.text).to.be.a('string');
 
-          parseString(data.text, (err, result) => {
-            expect(err).to.be.null;
-            expect(result).to.be.an('object');
+          return new Promise(resolve => {
+
+            parseString(data.text, (err, result) => {
+
+              expect(err).to.be.null;
+              expect(result).to.be.an('object');
+
+              resolve();
+            });
           });
         })
     );
@@ -136,9 +159,14 @@ describe('CalculationService', () => {
         .send(SUBTRACT_XML)
         .then(data => {
 
-          parseString(data.text, (err, result) => {
+          return new Promise(resolve => {
 
-            expect(result['soap:Envelope']['soap:Body'][0]['SubtractResponse'][0]['result'][0]).to.eql('-1');
+            parseString(data.text, (err, result) => {
+
+              expect(result['soap:Envelope']['soap:Body'][0]['SubtractResponse'][0]['result'][0]).to.eql('-1');
+
+              resolve();
+            });
           });
         })
     );

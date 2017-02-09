@@ -65,17 +65,27 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
 }
 
 /**
+ * Creates soap server with constructor override
+ */
+export function createSoapServer(router: Router, options: ISoapOptions): ISoapServer {
+
+  options = Object.assign({}, options);
+
+  const wsdl = new WSDL(options.wsdl || options.xml || options.services, options.uri, options);
+  const server: ISoapServer = Object.create(Server.prototype);
+  ExpressServerConstructor.call(server, router, options.services, wsdl);
+
+  return server;
+}
+
+/**
  * Soap server middleware. Entry point of express-soap
  */
 export function soap(options: ISoapOptions): Router {
 
   const router = Router();
 
-  options = Object.assign({}, options);
-
-  const wsdl = new WSDL(options.wsdl || options['xml'] || options.services, options.uri, options);
-  const server: ISoapServer = Object.create(Server.prototype);
-  ExpressServerConstructor.call(server, router, options.services, wsdl);
+  createSoapServer(router, options);
 
   return router;
 }

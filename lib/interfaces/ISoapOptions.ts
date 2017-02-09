@@ -3,6 +3,7 @@ export interface ISoapOptions {
 
   services: any;
   wsdl: string;
+  xml?: string;
   uri?: string;
 
   ignoredNamespaces?: {
