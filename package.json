@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "@types/express": "4.0.35",
-    "@types/soap": "0.0.31"
+    "@types/soap": "0.21.0"
   }
 }
