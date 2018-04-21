@@ -13,7 +13,6 @@ const Server = soapOrigin['Server'] as any;
  */
 function ExpressServerConstructor(this: ISoapServer, router: Router,
                                   services: any, wsdl: any, options: any): void {
-
   // Path is fix and should be defined externally instead
   const PATH = '/';
 
@@ -23,6 +22,11 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
   this.path = PATH;
   this.services = services;
   this.wsdl = wsdl;
+  this.services = services;
+  this.wsdl = wsdl;
+  this.suppressStack = options && options.suppressStack;
+  this.returnFault = options && options.returnFault;
+  this.onewayOptions = options && options.oneWay || {};
 
   let isWsdlReady = false;
   let wsdlReadyError: any;
@@ -46,16 +50,13 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
       };
 
       if (isWsdlReady) {
-
         processRequest();
       } else {
-
         wsdlReadyListeners.push(processRequest);
       }
     });
 
   wsdl.onReady((err: any) => {
-
     isWsdlReady = true;
     wsdlReadyError = err;
     wsdlReadyListeners.forEach(listener => listener());
@@ -68,8 +69,7 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
  * Creates soap server with constructor override
  */
 export function createSoapServer(router: Router, options: ISoapOptions): ISoapServer {
-
-  options = Object.assign({}, options);
+  options = {...options};
 
   const wsdl = new WSDL(options.wsdl || options.xml || options.services, options.uri, options);
   const server: ISoapServer = Object.create(Server.prototype);
@@ -82,7 +82,6 @@ export function createSoapServer(router: Router, options: ISoapOptions): ISoapSe
  * Soap server middleware. Entry point of express-soap
  */
 export function soap(options: ISoapOptions): Router {
-
   const router = Router();
 
   createSoapServer(router, options);

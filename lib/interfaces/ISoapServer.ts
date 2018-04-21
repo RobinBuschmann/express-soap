@@ -2,10 +2,9 @@ import {Server} from 'soap';
 
 export interface ISoapServer extends Server {
 
-  path: string;
-  services: any;
-  wsdl: any;
-  authorizeConnection: Function;
+  suppressStack: any;
+  returnFault: any;
+  onewayOptions: any;
 
   _requestListener: Function;
   _initializeOptions: Function;
