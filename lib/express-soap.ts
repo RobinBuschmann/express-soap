@@ -22,8 +22,6 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
   this.path = PATH;
   this.services = services;
   this.wsdl = wsdl;
-  this.services = services;
-  this.wsdl = wsdl;
   this.suppressStack = options && options.suppressStack;
   this.returnFault = options && options.returnFault;
   this.onewayOptions = options && options.oneWay || {};
