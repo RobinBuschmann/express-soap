@@ -1,6 +1,6 @@
 {
   "name": "express-soap",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Express middleware based upon node-soap",
   "main": "index.js",
   "scripts": {
