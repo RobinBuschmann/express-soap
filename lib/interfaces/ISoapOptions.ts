@@ -19,6 +19,7 @@ export interface ISoapOptions {
   ignoreBaseNameSpaces?: any;
   forceSoap12Headers?: any;
   overrideRootElement?: any;
+  log?(type : string, data: any): any;
 
   [otherOption: string]: any;
 }
