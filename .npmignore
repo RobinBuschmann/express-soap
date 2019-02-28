@@ -6,3 +6,6 @@ tsconfig.json
 test
 .DS_Store
 .idea
+*.ts
+*.js.map
+!*.d.ts
