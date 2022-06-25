@@ -21,6 +21,7 @@ function ExpressServerConstructor(this: ISoapServer, router: Router,
   options = options || {};
   this.path = PATH;
   this.services = services;
+  // @ts-ignore
   this.wsdl = wsdl;
   this.suppressStack = options && options.suppressStack;
   this.returnFault = options && options.returnFault;
@@ -71,7 +72,7 @@ export function createSoapServer(router: Router, options: ISoapOptions): ISoapSe
 
   const wsdl = new WSDL(options.wsdl || options.xml || options.services, options.uri, options);
   const server: ISoapServer = Object.create(Server.prototype);
-  if(options.log) server.log = options.log;
+  if (options.log) server.log = options.log;
   ExpressServerConstructor.call(server, router, options.services, wsdl);
 
   return server;

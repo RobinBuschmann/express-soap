@@ -56,7 +56,7 @@ describe('CalculationService', () => {
               expect(err).to.be.null;
               expect(result).to.be.an('object');
 
-              resolve();
+              resolve(undefined);
             });
           });
         })
@@ -91,7 +91,7 @@ describe('CalculationService', () => {
               expect(err).to.be.null;
               expect(result).to.be.an('object');
 
-              resolve();
+              resolve(undefined);
             });
           });
         })
@@ -110,7 +110,7 @@ describe('CalculationService', () => {
 
               expect(result['soap:Envelope']['soap:Body'][0]['AddResponse'][0]['result'][0]).to.eql('5');
 
-              resolve();
+              resolve(undefined);
             });
           });
         })
@@ -145,7 +145,7 @@ describe('CalculationService', () => {
               expect(err).to.be.null;
               expect(result).to.be.an('object');
 
-              resolve();
+              resolve(undefined);
             });
           });
         })
@@ -164,7 +164,7 @@ describe('CalculationService', () => {
 
               expect(result['soap:Envelope']['soap:Body'][0]['SubtractResponse'][0]['result'][0]).to.eql('-1');
 
-              resolve();
+              resolve(undefined);
             });
           });
         })
