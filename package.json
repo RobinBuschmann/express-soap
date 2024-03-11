@@ -1,5 +1,5 @@
 {
-  "name": "@deltazero/express-soap",
+  "name": "express-soap",
   "version": "1.1.4",
   "description": "Express middleware based upon node-soap",
   "main": "index.js",
